@@ -20,3 +20,10 @@ export async function fetchPokemon() {
     .select();
   return checkError(response);
 }
+
+export async function fetchCars() {
+  const response = await client
+    .from('cars')
+    .select();
+  return checkError(response);
+}
