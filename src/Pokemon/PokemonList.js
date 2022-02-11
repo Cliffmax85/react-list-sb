@@ -1,11 +1,15 @@
-import React from 'react';
+import React, { Component } from 'react';
 import Pokemon from './Pokemon';
 
-export default function PokemonList({ pokemon }) {
-  return <div>
-    {pokemon.map((pokemon, i) => 
-      <Pokemon key={`${pokemon}-${i}`}
-        {...pokemon} />
-    )}
-  </div>;
+export default class PokemonList extends Component {
+  render() {
+    const { pokemon } = this.props;
+    return (<div>
+      {pokemon.map((pokemon, i) => 
+        <Pokemon key={`${pokemon}-${i}`}
+          {...pokemon} />
+      )}
+    </div>
+    );
+  }
 }
